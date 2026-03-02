@@ -44,6 +44,7 @@
         </button>
         <a class="nav__link" href="#services" data-scroll>Services</a>
         <a class="nav__link" href="#process" data-scroll>How It Works</a>
+        <a class="nav__link" href="#testimonials" data-scroll>Testimonials</a>
         <a class="nav__link" href="#about" data-scroll>About</a>
         <a class="nav__link nav__link--cta" href="#contact" data-scroll>Request Pickup</a>
       </div>
@@ -106,6 +107,36 @@
       </div>
 
       <div class="hero__ornament" aria-hidden="true"></div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="section" id="testimonials" aria-label="Testimonials">
+      <div class="container">
+        <header class="section__header reveal">
+          <p class="kicker">Testimonials</p>
+          <h2 class="section__title">What clients are saying</h2>
+          <p class="section__sub">
+            A few kind words from customers who trust us with everything from everyday shirts to treasured heirlooms.
+          </p>
+        </header>
+
+        <div class="testimonials">
+          <article class="testimonial reveal">
+            <p class="testimonial__quote">“They rescued a silk evening dress I thought was ruined. It came back spotless, perfectly pressed, and beautifully packaged.”</p>
+            <p class="testimonial__author">— Isabella M., Upper East Side</p>
+          </article>
+
+          <article class="testimonial reveal">
+            <p class="testimonial__quote">“The pickup and delivery service is unbelievably reliable. Our office uses them weekly and everything always returns looking immaculate.”</p>
+            <p class="testimonial__author">— Daniel R., Midtown Manhattan</p>
+          </article>
+
+          <article class="testimonial reveal">
+            <p class="testimonial__quote">“I trusted Private Launderers with my grandmother's lace table linens, and the restoration work was exceptional. They look radiant again.”</p>
+            <p class="testimonial__author">— Priya S., Garden City</p>
+          </article>
+        </div>
+      </div>
     </section>
 
     <!-- SERVICES -->
@@ -371,6 +402,22 @@
                 <p class="field__error" aria-live="polite"></p>
               </div>
 
+              <div class="promo-callout" aria-label="Promotional offer">
+                <p class="promo-callout__title">Get 10% off your next service</p>
+                <p class="promo-callout__body">Sign up for both email and text updates below to unlock your discount.</p>
+
+                <div class="signup-options" role="group" aria-label="Marketing signup options">
+                  <label class="signup-option" for="emailSignup">
+                    <input id="emailSignup" name="emailSignup" type="checkbox" />
+                    <span>Sign me up for email updates</span>
+                  </label>
+                  <label class="signup-option" for="textSignup">
+                    <input id="textSignup" name="textSignup" type="checkbox" />
+                    <span>Sign me up for text updates</span>
+                  </label>
+                </div>
+              </div>
+
               <div class="form__actions">
                 <button class="btn btn--primary" type="submit">Send request</button>
                 <p class="form__hint">No backend: this form validates inputs and displays a success state.</p>
@@ -379,7 +426,7 @@
               <div class="form__success" id="formSuccess" role="status" aria-live="polite" hidden>
                 <div class="success">
                   <p class="success__title">Request received</p>
-                  <p class="success__body">Thank you. Your message is ready to be sent—please call or email to complete scheduling.</p>
+                  <p class="success__body" id="successMessage">Thank you. Your message is ready to be sent—please call or email to complete scheduling.</p>
                 </div>
               </div>
             </form>
@@ -567,6 +614,7 @@
       <div class="footer__links" aria-label="Quick links">
         <a href="#services" data-scroll>Services</a>
         <a href="#process" data-scroll>How It Works</a>
+        <a href="#testimonials" data-scroll>Testimonials</a>
         <a href="#about" data-scroll>About</a>
         <a href="#contact" data-scroll>Contact</a>
       </div>

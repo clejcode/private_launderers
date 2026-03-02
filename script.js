@@ -13,6 +13,7 @@
     year: document.querySelector('#year'),
     contactForm: document.querySelector('#contactForm'),
     formSuccess: document.querySelector('#formSuccess'),
+    successMessage: document.querySelector('#successMessage'),
     modal: document.querySelector('#policyModal'),
     modalTitle: document.querySelector('#policyTitle'),
     modalBody: document.querySelector('#policyBody'),

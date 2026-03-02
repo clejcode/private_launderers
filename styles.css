@@ -535,6 +535,40 @@ textarea:focus-visible{
   }
 }
 
+/* Testimonials */
+.testimonials{
+  margin-top: 1.5rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+.testimonial{
+  margin: 0;
+  padding: 18px;
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+  background: var(--panel);
+  box-shadow: var(--shadow);
+}
+.testimonial__quote{
+  margin: 0;
+  font-family: var(--serif);
+  font-size: clamp(24px, 2.8vw, 30px);
+  line-height: 1.2;
+}
+.testimonial__author{
+  margin: 12px 0 0;
+  color: var(--muted);
+  font-size: 14px;
+  letter-spacing: 0.02em;
+}
+
+@media (min-width: 980px){
+  .testimonials{
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
 /* Contact */
 .contact{
   display:grid;
@@ -616,6 +650,39 @@ textarea:focus-visible{
 .field.is-invalid input,
 .field.is-invalid textarea{
   border-color: rgba(255,146,146,0.65);
+}
+.promo-callout{
+  margin-top: 14px;
+  padding: 14px;
+  border-radius: var(--radius);
+  border: 1px solid rgba(111,29,42,0.38);
+  background: rgba(111,29,42,0.08);
+}
+.promo-callout__title{
+  margin: 0 0 4px;
+  font-family: var(--serif);
+  font-size: 22px;
+  line-height: 1.15;
+}
+.promo-callout__body{
+  margin: 0 0 10px;
+  color: var(--muted);
+}
+.signup-options{
+  display: grid;
+  gap: 8px;
+}
+.signup-option{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--text);
+  font-size: 14px;
+}
+.signup-option input{
+  width: 16px;
+  height: 16px;
+  accent-color: var(--accent);
 }
 .form__actions{
   margin-top: 12px;
