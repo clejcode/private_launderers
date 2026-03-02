@@ -371,6 +371,22 @@
                 <p class="field__error" aria-live="polite"></p>
               </div>
 
+              <div class="promo-callout" aria-label="Promotional offer">
+                <p class="promo-callout__title">Get 10% off your next service</p>
+                <p class="promo-callout__body">Sign up for both email and text updates below to unlock your discount.</p>
+
+                <div class="signup-options" role="group" aria-label="Marketing signup options">
+                  <label class="signup-option" for="emailSignup">
+                    <input id="emailSignup" name="emailSignup" type="checkbox" />
+                    <span>Sign me up for email updates</span>
+                  </label>
+                  <label class="signup-option" for="textSignup">
+                    <input id="textSignup" name="textSignup" type="checkbox" />
+                    <span>Sign me up for text updates</span>
+                  </label>
+                </div>
+              </div>
+
               <div class="form__actions">
                 <button class="btn btn--primary" type="submit">Send request</button>
                 <p class="form__hint">No backend: this form validates inputs and displays a success state.</p>
@@ -379,7 +395,7 @@
               <div class="form__success" id="formSuccess" role="status" aria-live="polite" hidden>
                 <div class="success">
                   <p class="success__title">Request received</p>
-                  <p class="success__body">Thank you. Your message is ready to be sent—please call or email to complete scheduling.</p>
+                  <p class="success__body" id="successMessage">Thank you. Your message is ready to be sent—please call or email to complete scheduling.</p>
                 </div>
               </div>
             </form>
