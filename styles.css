@@ -855,3 +855,109 @@ body[data-theme='light'] .theme-toggle__thumb{ transform: translateX(0); }
 @media (min-width: 860px){
   .theme-toggle{ margin-right: 6px; }
 }
+
+/* Membership */
+.section--membership{
+  border-top: 1px solid var(--line);
+}
+.membership-cards{
+  margin-top: 1.5rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+.membership-card{
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+  background: var(--panel);
+  padding: 16px;
+  box-shadow: var(--shadow);
+}
+.membership-card__title{
+  margin: 0;
+  font-family: var(--serif);
+  font-size: 24px;
+}
+.membership-card__price{
+  margin: 6px 0 10px;
+  color: var(--muted);
+}
+.membership-card__benefits{
+  margin: 0 0 14px;
+  padding-left: 18px;
+  color: var(--muted);
+}
+.membership-actions{
+  margin-top: 1.2rem;
+}
+
+/* Concierge */
+.section--concierge{
+  border-top: 1px solid var(--line);
+}
+.concierge-layout{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin-top: 1.5rem;
+}
+.concierge-controls,
+.concierge-summary{
+  border-radius: calc(var(--radius) + 4px);
+  border: 1px solid var(--line);
+  background: var(--panel);
+  padding: 16px;
+}
+.concierge-summary p{ margin: 0 0 8px; color: var(--muted); }
+.concierge-summary__title{
+  margin: 0 0 12px;
+  font-family: var(--serif);
+  font-size: 24px;
+}
+.field select{
+  width: 100%;
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  background: #fff;
+  color: #111;
+}
+.field-group{
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 10px 12px;
+  margin: 12px 0 0;
+}
+.field-group legend{
+  padding: 0 6px;
+  color: var(--faint);
+  font-size: 13px;
+}
+.field-group label,
+.field--checkbox label{
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--muted);
+  margin: 8px 0;
+}
+
+/* Schedule */
+.section--schedule{
+  border-top: 1px solid var(--line);
+}
+
+/* Modal enhancement */
+.modal__backdrop{
+  backdrop-filter: blur(2px);
+}
+
+@media (min-width: 860px){
+  .membership-cards{
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .concierge-layout{
+    grid-template-columns: 1.1fr 0.9fr;
+    align-items: start;
+  }
+}

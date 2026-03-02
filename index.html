@@ -388,6 +388,172 @@
 
       </div>
     </section>
+
+    <!-- MEMBERSHIP -->
+    <section id="membership" class="section section--membership" aria-label="Membership">
+      <div class="container">
+        <header class="section__header reveal">
+          <p class="kicker">Membership</p>
+          <h2 class="section__title">Membership</h2>
+          <p class="section__sub">A simple way to plan ongoing garment care.</p>
+        </header>
+
+        <div class="membership-cards" role="list" aria-label="Membership plans">
+          <article class="membership-card reveal" role="listitem" data-plan="Essential">
+            <h3 class="membership-card__title">Essential</h3>
+            <p class="membership-card__price">$— / month</p>
+            <ul class="membership-card__benefits">
+              <li>Priority scheduling requests</li>
+              <li>Consistent monthly budgeting</li>
+              <li>Ideal for regular wardrobe care</li>
+            </ul>
+            <button class="btn btn--ghost membership-card__select" type="button" data-membership-select="Essential">Select</button>
+          </article>
+
+          <article class="membership-card reveal" role="listitem" data-plan="Preferred">
+            <h3 class="membership-card__title">Preferred</h3>
+            <p class="membership-card__price">$— / month</p>
+            <ul class="membership-card__benefits">
+              <li>Priority scheduling requests</li>
+              <li>Consistent monthly budgeting</li>
+              <li>Supports routine garment rotation</li>
+            </ul>
+            <button class="btn btn--ghost membership-card__select" type="button" data-membership-select="Preferred">Select</button>
+          </article>
+
+          <article class="membership-card reveal" role="listitem" data-plan="Premier">
+            <h3 class="membership-card__title">Premier</h3>
+            <p class="membership-card__price">$— / month</p>
+            <ul class="membership-card__benefits">
+              <li>Priority scheduling requests</li>
+              <li>Consistent monthly budgeting</li>
+              <li>Structured support for larger wardrobes</li>
+            </ul>
+            <button class="btn btn--ghost membership-card__select" type="button" data-membership-select="Premier">Select</button>
+          </article>
+        </div>
+
+        <div class="membership-actions reveal">
+          <button id="membershipInquire" class="btn btn--primary" type="button">Inquire about Membership</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- GARMENT CONCIERGE -->
+    <section id="concierge" class="section section--concierge" aria-label="Garment Concierge">
+      <div class="container">
+        <header class="section__header reveal">
+          <p class="kicker">Concierge</p>
+          <h2 class="section__title">Garment Concierge</h2>
+          <p class="section__sub">Build a request and see suggested care options.</p>
+        </header>
+
+        <div class="concierge-layout">
+          <div class="concierge-controls reveal" aria-label="Concierge controls">
+            <div class="field">
+              <label for="garmentType">Garment Type</label>
+              <select id="garmentType" name="garmentType">
+                <option>Suit</option>
+                <option>Silk Blouse</option>
+                <option>Cashmere Sweater</option>
+                <option>Coat</option>
+                <option>Dress</option>
+              </select>
+            </div>
+
+            <fieldset class="field-group">
+              <legend>Service Type</legend>
+              <label><input type="radio" name="serviceType" value="Standard Care" checked /> Standard Care</label>
+              <label><input type="radio" name="serviceType" value="Premium Care" /> Premium Care</label>
+              <label><input type="radio" name="serviceType" value="Press Only" /> Press Only</label>
+            </fieldset>
+
+            <fieldset class="field-group">
+              <legend>Add-ons</legend>
+              <label for="addonStain"><input type="checkbox" id="addonStain" /> Stain treatment</label>
+              <label for="addonRush"><input type="checkbox" id="addonRush" /> Rush handling</label>
+              <label for="addonStorage"><input type="checkbox" id="addonStorage" /> Seasonal storage</label>
+            </fieldset>
+          </div>
+
+          <aside class="concierge-summary reveal" id="conciergeSummary" aria-live="polite">
+            <h3 class="concierge-summary__title">Request Summary</h3>
+            <p><strong>Selected garment:</strong> <span data-summary-garment>Suit</span></p>
+            <p><strong>Selected service:</strong> <span data-summary-service>Standard Care</span></p>
+            <p><strong>Selected add-ons:</strong> <span data-summary-addons>None</span></p>
+            <p><strong>Estimated Total (estimate):</strong> <span data-summary-total>$35</span></p>
+            <button id="conciergeToSchedule" class="btn btn--primary" type="button">Use this request for pickup</button>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- SCHEDULE -->
+    <section id="schedule" class="section section--schedule" aria-label="Schedule Pickup &amp; Delivery">
+      <div class="container">
+        <header class="section__header reveal">
+          <p class="kicker">Pickup</p>
+          <h2 class="section__title">Schedule Pickup &amp; Delivery</h2>
+          <p class="section__sub">Request a pickup window and we’ll confirm shortly.</p>
+        </header>
+
+        <form id="scheduleForm" class="form reveal" novalidate>
+          <div class="form__row">
+            <div class="field">
+              <label for="scheduleName">Full Name</label>
+              <input id="scheduleName" name="fullName" type="text" required autocomplete="name" />
+            </div>
+            <div class="field">
+              <label for="scheduleEmail">Email</label>
+              <input id="scheduleEmail" name="email" type="email" required autocomplete="email" />
+            </div>
+          </div>
+
+          <div class="form__row">
+            <div class="field">
+              <label for="schedulePhone">Phone (optional)</label>
+              <input id="schedulePhone" name="phone" type="tel" autocomplete="tel" />
+            </div>
+            <div class="field">
+              <label for="scheduleAddress">Address</label>
+              <input id="scheduleAddress" name="address" type="text" required autocomplete="street-address" />
+            </div>
+          </div>
+
+          <div class="form__row">
+            <div class="field">
+              <label for="pickupDate">Pickup Date</label>
+              <input id="pickupDate" name="pickupDate" type="date" required />
+            </div>
+            <div class="field">
+              <label for="pickupWindow">Pickup Window</label>
+              <select id="pickupWindow" name="pickupWindow" required>
+                <option value="">Select a window</option>
+                <option>Morning (9–12)</option>
+                <option>Midday (12–3)</option>
+                <option>Afternoon (3–6)</option>
+                <option>Evening (6–9)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="field field--checkbox">
+            <label for="recurringWeekly"><input id="recurringWeekly" name="recurringWeekly" type="checkbox" /> Make this recurring weekly</label>
+          </div>
+
+          <div class="field">
+            <label for="scheduleNotes">Notes</label>
+            <textarea id="scheduleNotes" name="notes" rows="4" placeholder="Garment notes, access instructions, etc."></textarea>
+          </div>
+
+          <div class="form__actions">
+            <button class="btn btn--primary" type="submit">Request Pickup</button>
+            <p class="form__hint">We only use this information to coordinate your request.</p>
+          </div>
+        </form>
+      </div>
+    </section>
+
   </main>
 
   <footer class="footer" aria-label="Footer">
