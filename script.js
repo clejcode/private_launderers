@@ -19,9 +19,12 @@
     modal: document.querySelector('#policyModal'),
     modalTitle: document.querySelector('#policyTitle'),
     modalBody: document.querySelector('#policyBody'),
+    themeToggle: document.querySelector('#themeToggle'),
     modalOpenButtons: Array.from(document.querySelectorAll('[data-modal-open]')),
     modalCloseButtons: Array.from(document.querySelectorAll('[data-modal-close]'))
   };
+
+  const THEME_KEY = 'private-launderers-theme';
 
   const SECTION_IDS = ['#home', '#services', '#process', '#about', '#contact'];
 
@@ -47,6 +50,22 @@
     if (!dom.header) return;
     dom.header.classList.remove('is-open');
     if (dom.navToggle) dom.navToggle.setAttribute('aria-expanded', 'false');
+  };
+
+  const setTheme = (theme) => {
+    const selectedTheme = theme === 'light' ? 'light' : 'dark';
+    document.body.setAttribute('data-theme', selectedTheme);
+
+    const isDark = selectedTheme === 'dark';
+    if (dom.themeToggle) {
+      dom.themeToggle.setAttribute('aria-pressed', String(isDark));
+      dom.themeToggle.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+      const label = dom.themeToggle.querySelector('.theme-toggle__label');
+      if (label) label.textContent = isDark ? 'Dark mode' : 'Light mode';
+    }
+
+    const metaThemeColor = document.querySelector('meta[name="theme-color"]');
+    if (metaThemeColor) metaThemeColor.setAttribute('content', isDark ? '#101113' : '#f8f8f7');
   };
 
   const scrollToTarget = (hash) => {
@@ -299,6 +318,20 @@
     });
   };
 
+  const initThemeToggle = () => {
+    const savedTheme = localStorage.getItem(THEME_KEY);
+    setTheme(savedTheme || 'dark');
+
+    if (!dom.themeToggle) return;
+
+    dom.themeToggle.addEventListener('click', () => {
+      const currentTheme = document.body.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
+      const nextTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      setTheme(nextTheme);
+      localStorage.setItem(THEME_KEY, nextTheme);
+    });
+  };
+
   // ---------------------------------------------------------------------------
   // Boot sequence
   // ---------------------------------------------------------------------------
@@ -307,6 +340,7 @@
   initAnchorScrolling();
   initActiveSectionHighlight();
   initBackToTop();
+  initThemeToggle();
   initRevealAnimations();
   initContactForm();
   initModal();
