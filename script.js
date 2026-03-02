@@ -16,6 +16,7 @@
     year: document.querySelector('#year'),
     contactForm: document.querySelector('#contactForm'),
     formSuccess: document.querySelector('#formSuccess'),
+    successMessage: document.querySelector('#successMessage'),
     modal: document.querySelector('#policyModal'),
     modalTitle: document.querySelector('#policyTitle'),
     modalBody: document.querySelector('#policyBody'),
@@ -260,6 +261,20 @@
         const firstInvalid = dom.contactForm.querySelector('[aria-invalid="true"]');
         if (firstInvalid instanceof HTMLElement) firstInvalid.focus();
         return;
+      }
+
+      const emailSignup = dom.contactForm.elements.namedItem('emailSignup');
+      const textSignup = dom.contactForm.elements.namedItem('textSignup');
+      const hasPromoOptIn =
+        emailSignup instanceof HTMLInputElement &&
+        textSignup instanceof HTMLInputElement &&
+        emailSignup.checked &&
+        textSignup.checked;
+
+      if (dom.successMessage) {
+        dom.successMessage.textContent = hasPromoOptIn
+          ? 'Thank you. You are signed up for email and text updates—your 10% off on your next service is now unlocked. Please call or email to complete scheduling.'
+          : 'Thank you. Your message is ready to be sent—please call or email to complete scheduling.';
       }
 
       dom.contactForm.reset();
